@@ -7,7 +7,6 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Table(name = "projektas")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,12 +19,7 @@ public class Projektas {
 
     private String pavadinimas;
 
-    @ManyToMany
-    @JoinTable(
-            name = "darbuotojas_projektas",
-            joinColumns = @JoinColumn(name = "projektas_id"),
-            inverseJoinColumns = @JoinColumn(name = "darbuotojas_id")
-    )
+    @OneToMany(mappedBy = "projektas", cascade = CascadeType.ALL)
     private List<Darbuotojas> darbuotojai;
 
     public Projektas(String pavadinimas, List<Darbuotojas> darbuotojai) {

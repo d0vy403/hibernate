@@ -6,7 +6,6 @@ import lombok.*;
 import java.util.List;
 
 @Entity
-@Table(name = "skyrius")
 @Getter
 @Setter
 @NoArgsConstructor
