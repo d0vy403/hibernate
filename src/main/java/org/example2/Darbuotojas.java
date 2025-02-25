@@ -22,11 +22,16 @@ public class Darbuotojas {
     @JoinColumn(name = "skyrius_id")
     private Skyrius skyrius;
 
-    public Darbuotojas(String vardas, String pavarde, String pareigos, Skyrius skyrius) {
+    @ManyToOne
+    @JoinColumn(name = "projektas_id")
+    private Projektas projektas;
+
+    public Darbuotojas(String vardas, String pavarde, String pareigos, Skyrius skyrius, Projektas projektas) {
         this.vardas = vardas;
         this.pavarde = pavarde;
         this.pareigos = pareigos;
         this.skyrius = skyrius;
+        this.projektas = projektas;
     }
 }
 
